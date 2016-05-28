@@ -1,0 +1,21 @@
+{
+  "name": "callback-sequencer",
+  "version": "1.0.0",
+  "authors": [
+    "Chris Miller <chris@xirvr.com>"
+  ],
+  "description": "callback-sequencer",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "devDependencies": {
+    "DefinitelyTyped": "*"
+  }
+}

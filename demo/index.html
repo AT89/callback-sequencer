@@ -1,0 +1,152 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>callback-sequencer</title>
+    <meta name="description" content="callback-sequencer">
+    <script src="callback-sequencer.js"></script>
+    <!-- <script src="callback-sequencer.min.js"></script> -->
+    <style type="text/css">
+      html, body {
+        padding:0;
+        margin:0;
+        background:#000;
+        color:#fff;
+        font-family:Arial;
+        height:100%;
+      }
+
+      .box {
+        float:left;
+        margin:5px;
+        display:block;
+        background: #888;
+        height:20px;
+      }
+
+      .whole {
+        width:160px;
+      }
+
+      .half {
+        width:80px;
+      }
+
+      .quarter {
+        width:40px;
+      }
+
+      .eighth {
+        width:20px;
+      }
+
+      .sixteenth {
+        width:10px;
+      }
+
+      .red {
+        border:1px solid #f22;
+        box-shadow:2px solid #f22;
+      }
+
+      .green {
+        border:1px solid #2f2;
+        box-shadow:2px solid #2f2;
+      }
+
+      .blue {
+        border:1px solid #22f;
+        box-shadow:2px solid #22f;
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 11]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <script>
+      (function() {
+        var sequencer = null,
+            callbacks = null;
+
+        function addBox(size, color) {
+          var box = document.createElement('div');
+          box.className = 'box ' + size + ' ' + color;
+          document.body.appendChild(box);
+        }
+
+        callbacks = [
+          [
+            function() {
+              addBox('whole', 'red');
+            }
+          ], [
+            function() {
+              addBox('sixteenth', 'green');
+            }           
+          ], [
+            function() {
+              addBox('eighth', 'blue');
+            }                     
+          ], [
+            function() {
+              addBox('sixteenth', 'red');
+            }                               
+          ], [
+            function() {
+              addBox('quarter', 'green');
+            }
+          ], [
+            function() {
+              addBox('sixteenth', 'blue');
+            }
+          ], [
+            function() {
+              addBox('eighth', 'red');
+            }
+          ], [
+            function() {
+              addBox('sixteenth', 'green');
+            }
+          ], [
+            function() {
+              addBox('half', 'blue');
+            }
+          ], [
+            function() {
+              addBox('sixteenth', 'red');
+            }
+          ], [
+            function() {
+              addBox('eighth', 'green');
+            }
+          ], [
+            function() {
+              addBox('sixteenth', 'blue');
+            }
+          ], [
+            function() {
+              addBox('quarter', 'red');
+            }
+          ], [
+            function() {
+              addBox('sixteenth', 'green');
+            }
+          ], [
+            function() {
+              addBox('eighth', 'blue');
+            }
+          ], [
+            function() {
+              addBox('sixteenth', 'red');
+            }
+          ]
+        ];
+
+        sequencer = new window.CallbackSequencer({callbacks: callbacks, bpm: 135});
+      })();
+    </script>
+  </body>
+</html>
